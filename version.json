@@ -1,13 +1,17 @@
 {
-  "versionCode": 4,
-  "versionName": "1.2",
+  "versionCode": 5,
+  "versionName": "1.3",
   "fecha": "5 de septiembre de 2026",
   "pesoMb": 109,
-  "url": "https://github.com/betoavila92389-oss/runic-downloader/releases/download/v1.2-4/RunicDownloader-v1.2.apk",
-  "notas": "Runic ya avisa sola cuando hay una versión nueva, y esta página guarda siempre la última.",
+  "url": "https://github.com/betoavila92389-oss/runic-downloader/releases/download/v1.3-5/RunicDownloader-v1.3.apk",
+  "notas": "Ahora puedes elegir cómo se ve Runic: siempre clara, siempre oscura o como el teléfono.",
   "cambios": [
-    "En Ajustes, arriba del todo, aparece qué versión tienes y si ya hay una más nueva, con lo que trae y un botón que abre la descarga.",
-    "Esta página de descargas: para poner Runic en otro teléfono ya no hace falta cable ni pasar el archivo por WhatsApp."
+    "En Ajustes, en el segundo bloque, aparece «Apariencia» con tres opciones: como el teléfono, siempre clara o siempre oscura. El cambio se ve en el acto, sin cerrar la app, y se queda puesto para la próxima vez."
   ],
-  "correcciones": []
+  "correcciones": [
+    "Cancelar una descarga a medias ya no ensucia el resumen de la siguiente.",
+    "Abrir un video desde WhatsApp o el explorador de archivos ya reproduce ese video, y no otro.",
+    "Bajar una lista larga va más rápido, y la lista de canciones del reproductor también.",
+    "Al limpiar los nombres ya no se pierden el año, el género ni el número de pista de las canciones."
+  ]
 }
