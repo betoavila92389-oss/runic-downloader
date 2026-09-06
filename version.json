@@ -1,0 +1,13 @@
+{
+  "versionCode": 4,
+  "versionName": "1.2",
+  "fecha": "5 de septiembre de 2026",
+  "pesoMb": 109,
+  "url": "https://github.com/betoavila92389-oss/runic-downloader/releases/download/v1.2-4/RunicDownloader-v1.2.apk",
+  "notas": "Runic ya avisa sola cuando hay una versión nueva, y esta página guarda siempre la última.",
+  "cambios": [
+    "En Ajustes, arriba del todo, aparece qué versión tienes y si ya hay una más nueva, con lo que trae y un botón que abre la descarga.",
+    "Esta página de descargas: para poner Runic en otro teléfono ya no hace falta cable ni pasar el archivo por WhatsApp."
+  ],
+  "correcciones": []
+}

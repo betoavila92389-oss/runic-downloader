@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Runic Downloader</title>
+<meta name="description" content="Aplicación Android para descargar videos y música al teléfono y reproducirlos sin internet.">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <div class="caja">
+    <h1>Runic Downloader</h1>
+    <p>Descarga videos y música al teléfono, y los reproduce sin internet.</p>
+    <nav style="margin-top:16px"><a href="descargas.html">Descargar</a><a href="historial.html">Historial de versiones</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="tarjeta destacado">
+    <p style="margin:0 0 16px">
+      <strong>Última versión: <span id="version">—</span></strong>
+      <span id="fecha" class="gris"></span>
+    </p>
+    <p style="margin:0"><a class="boton" href="descargas.html">Ir a la descarga</a></p>
+  </div>
+
+  <h2>Qué hace</h2>
+  <ul>
+    <li><strong>Descarga videos</strong> de YouTube, TikTok, Facebook, Instagram, X y otros sitios, en la calidad que se elija, hasta 4K.</li>
+    <li><strong>Descarga música en MP3</strong>, una canción suelta o una lista de reproducción entera, con su portada y sus datos.</li>
+    <li><strong>Reproductor de música</strong> con buscador, que sigue sonando con la pantalla apagada.</li>
+    <li><strong>Reproductor de videos</strong>, con ventanita flotante para seguir viendo mientras se usa otra cosa.</li>
+    <li><strong>Ordena la biblioteca</strong>: acomoda la música por artista y álbum, arregla los nombres feos y encuentra las canciones repetidas.</li>
+  </ul>
+
+  <h2>Dónde se guarda todo</h2>
+  <p>
+    En dos carpetas normales del teléfono, <code>runicMusic</code> y <code>runicVideos</code>,
+    que se abren desde cualquier explorador de archivos y se pueden copiar a la computadora.
+    Están <strong>fuera</strong> de la aplicación: si algún día se desinstala Runic, la
+    música y los videos siguen ahí.
+  </p>
+
+  <h2>Qué manda a internet</h2>
+  <p>
+    Solo lo que hace falta para bajar lo que se le pide: la aplicación habla con el sitio
+    del video y con nadie más. <strong>No tiene cuentas, ni registro, ni servidor propio</strong>,
+    y no manda a ningún lado qué se descarga ni qué se escucha. Todo el trabajo lo hace el
+    teléfono.
+  </p>
+  <p>
+    Lo único que consulta aparte es <strong>este archivo de esta página</strong>, para saber
+    si hay una versión nueva. Es una lectura y nada más: no envía ningún dato, y la
+    aplicación nunca instala nada por su cuenta — abre el navegador y decide quien tiene el
+    teléfono.
+  </p>
+
+  <h2>Para quién es</h2>
+  <p>
+    Es una aplicación de uso personal, no está en Google Play y no se pretende publicar ahí:
+    necesita un permiso de acceso a archivos que la tienda no admite. Se instala a mano,
+    desde esta página.
+  </p>
+
+  <div class="pie">
+    <p><a href="descargas.html">Descargar</a> · <a href="historial.html">Historial de versiones</a></p>
+  </div>
+</main>
+
+<script>
+fetch("version.json?" + Date.now())
+  .then(function (r) { return r.json(); })
+  .then(function (v) {
+    document.getElementById("version").textContent = v.versionName;
+    document.getElementById("fecha").textContent = " · publicada el " + v.fecha;
+  })
+  .catch(function () {});
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descargar Runic Downloader</title>
+<meta name="description" content="Última versión de Runic Downloader, la aplicación para descargar videos y música en el teléfono.">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <div class="caja">
+    <h1>Descargar Runic Downloader</h1>
+    <p>Descarga videos y música al teléfono, y los reproduce sin internet.</p>
+    <nav style="margin-top:16px"><a href="index.html">Inicio</a><a href="historial.html">Historial de versiones</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="tarjeta destacado">
+    <h2 style="margin-top:0">Última versión</h2>
+    <p id="version" style="font-size:1.2rem;margin:8px 0"><strong>—</strong></p>
+    <p id="fecha" class="gris" style="margin:0 0 4px"></p>
+    <p id="notas" style="margin:12px 0"></p>
+    <div id="novedades"></div>
+    <p style="margin-top:20px">
+      <a id="descargar" class="boton" href="#">Descargar el APK</a>
+    </p>
+    <p id="peso" class="gris chico"></p>
+  </div>
+
+  <h2>Cómo se instala</h2>
+  <ol>
+    <li>Descargue el archivo <strong>desde el propio teléfono</strong>, con este mismo botón.</li>
+    <li>Ábralo desde la notificación de la descarga, o desde «Mis archivos» → Descargas.</li>
+    <li>La primera vez, Android avisará que no puede instalar «aplicaciones desconocidas»: hay que permitírselo al navegador o a «Mis archivos». Es normal, la aplicación no viene de la tienda.</li>
+    <li>Al abrir Runic hay que <strong>conceder el acceso a archivos</strong> que pide en la primera pantalla. Sin eso no puede guardar nada.</li>
+    <li>Después, entre en <strong>Ajustes → Actualizar motor de descargas</strong> y tóquelo una vez. Sin eso, YouTube no ofrece las calidades de los videos.</li>
+  </ol>
+
+  <div class="tarjeta">
+    <p style="margin:0">
+      <strong>Si ya tiene Runic instalada</strong>, esta se pone encima y no se pierde nada:
+      su música y sus videos viven fuera de la aplicación, en las carpetas
+      <code>runicMusic</code> y <code>runicVideos</code> del teléfono.
+    </p>
+  </div>
+
+  <div class="tarjeta">
+    <p style="margin:0">
+      <strong>Una excepción, y es la única.</strong> Si en ese teléfono se instaló Runic
+      por cable desde la computadora (la copia de pruebas), Android <em>no</em> deja poner
+      esta encima: van firmadas con llaves distintas y sale «aplicación no instalada».
+      Hay que desinstalar la vieja primero. Tampoco ahí se pierde la música ni los videos.
+    </p>
+  </div>
+
+  <h2>En qué teléfonos funciona</h2>
+  <p>
+    Android 7 en adelante, con procesador ARM, que es el de todos los teléfonos normales
+    (Motorola, Samsung, Xiaomi…). El archivo pesa unos 110 MB porque lleva dentro todo el
+    motor de descargas: no necesita instalar nada más ni conectarse a ningún servidor.
+  </p>
+
+  <div class="pie">
+    <p><a href="index.html">Inicio</a> · <a href="historial.html">Historial de versiones</a></p>
+  </div>
+</main>
+
+<script>
+// Esta es la MISMA información que consulta la app para saber si hay versión
+// nueva: si se cambia version.json, cambian los dos a la vez.
+fetch("version.json?" + Date.now())
+  .then(function (r) { return r.json(); })
+  .then(function (v) {
+    document.getElementById("version").innerHTML =
+      "<strong>" + v.versionName + "</strong> (compilación " + v.versionCode + ")";
+    document.getElementById("fecha").textContent = "Publicada el " + v.fecha + ".";
+    document.getElementById("notas").textContent = v.notas || "";
+
+    var caja = document.getElementById("novedades");
+    caja.innerHTML =
+      lista("Qué trae de nuevo", v.cambios) + lista("Qué se arregló", v.correcciones);
+
+    var enlace = document.getElementById("descargar");
+    enlace.href = v.url;
+    enlace.setAttribute("download", "");
+
+    if (v.pesoMb) {
+      document.getElementById("peso").textContent =
+        "Pesa " + v.pesoMb + " MB: mejor con wifi.";
+    }
+  })
+  .catch(function () {
+    document.getElementById("version").textContent =
+      "No se pudo leer la información de la versión. Recargue la página.";
+  });
+
+function lista(titulo, renglones) {
+  if (!renglones || !renglones.length) { return ""; }
+  var html = "<h3>" + titulo + "</h3><ul>";
+  for (var i = 0; i < renglones.length; i++) {
+    html += "<li>" + renglones[i] + "</li>";
+  }
+  return html + "</ul>";
+}
+</script>
+</body>
+</html>

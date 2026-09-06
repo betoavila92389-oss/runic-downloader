@@ -1,0 +1,47 @@
+[
+  {
+    "versionCode": 4,
+    "versionName": "1.2",
+    "fecha": "5 de septiembre de 2026",
+    "pesoMb": 109,
+    "url": "https://github.com/betoavila92389-oss/runic-downloader/releases/download/v1.2-4/RunicDownloader-v1.2.apk",
+    "notas": "Runic ya avisa sola cuando hay una versión nueva, y esta página guarda siempre la última.",
+    "cambios": [
+      "En Ajustes, arriba del todo, aparece qué versión tienes y si ya hay una más nueva, con lo que trae y un botón que abre la descarga.",
+      "Esta página de descargas: para poner Runic en otro teléfono ya no hace falta cable ni pasar el archivo por WhatsApp."
+    ],
+    "correcciones": []
+  },
+  {
+    "versionCode": 3,
+    "versionName": "1.1.1",
+    "fecha": "10 de agosto de 2026",
+    "notas": "Versión del grupo de prueba. No se publicó aquí: se repartió a mano.",
+    "cambios": [
+      "Se esconde el bloque de cookies de Ajustes: exportarlas es un procedimiento largo, fácil de hacer mal, y quien tenga ese archivo puede entrar a las cuentas de Instagram y Facebook de quien lo exportó."
+    ],
+    "correcciones": []
+  },
+  {
+    "versionCode": 2,
+    "versionName": "1.1.0",
+    "fecha": "10 de agosto de 2026",
+    "notas": "Versión del grupo de prueba. No se publicó aquí: se repartió a mano.",
+    "cambios": [
+      "El botón «Enviar informe de errores» de Ajustes: recoge qué teléfono es, qué versión del motor tiene y los cierres inesperados, y abre el menú de compartir.",
+      "Una caja negra que apunta los cierres aunque la app se cierre de golpe."
+    ],
+    "correcciones": []
+  },
+  {
+    "versionCode": 1,
+    "versionName": "1.0",
+    "fecha": "9 de agosto de 2026",
+    "notas": "La primera versión repartible.",
+    "cambios": [
+      "Las cuatro pestañas: descargar video, descargar música, reproductor de música y reproductor de video.",
+      "Ajustes completos: actualizar el motor, organizar la música, limpiar los nombres y encontrar las canciones repetidas."
+    ],
+    "correcciones": []
+  }
+]

@@ -1,0 +1,65 @@
+/* Los colores son los de la app: azul de piedra rúnica y dorado apagado. */
+:root {
+  --azul: #4A5BA9;
+  --dorado: #7C5E24;
+  --tinta: #1A1B21;
+  --suave: #5b5c66;
+  --fondo: #FBF8FF;
+  --tarjeta: #ffffff;
+  --borde: #e2e0ea;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
+}
+header {
+  background: var(--azul);
+  color: #fff;
+  padding: 48px 24px 40px;
+}
+header .caja, main { max-width: 760px; margin: 0 auto; }
+header h1 { margin: 0 0 8px; font-size: 1.9rem; line-height: 1.25; }
+header p { margin: 0; opacity: .9; }
+main { padding: 32px 24px 64px; }
+h2 { color: var(--azul); margin-top: 40px; font-size: 1.3rem; }
+h3 { font-size: 1.05rem; margin-top: 28px; }
+ul, ol { padding-left: 20px; }
+li { margin-bottom: 6px; }
+.tarjeta {
+  background: var(--tarjeta);
+  border-radius: 20px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  box-shadow: 0 1px 3px rgba(26,27,33,.12);
+}
+.destacado { border-left: 4px solid var(--dorado); }
+.boton {
+  display: inline-block;
+  background: var(--azul);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.pie { color: var(--suave); font-size: .9rem; margin-top: 48px; border-top: 1px solid var(--borde); padding-top: 20px; }
+.gris { color: var(--suave); }
+.chico { font-size: .9rem; }
+a { color: var(--azul); }
+nav a { color: #fff; margin-right: 16px; }
+code { background: rgba(74,91,169,.10); padding: 1px 5px; border-radius: 5px; }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #121319; --tarjeta: #1E1F26; --tinta: #E3E1EA;
+    --suave: #9a99a6; --borde: #2b2c35; --dorado: #EEC26B;
+  }
+  header { background: #313D8F; }
+  h2 { color: #B8C3FF; }
+  a { color: #B8C3FF; }
+  .boton { background: #313D8F; }
+  code { background: rgba(184,195,255,.12); }
+}

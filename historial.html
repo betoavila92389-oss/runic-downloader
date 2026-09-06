@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Historial de versiones · Runic Downloader</title>
+<meta name="description" content="Todas las versiones de Runic Downloader y qué trajo cada una.">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <div class="caja">
+    <h1>Historial de versiones</h1>
+    <p>Qué trajo cada versión de Runic Downloader.</p>
+    <nav style="margin-top:16px"><a href="index.html">Inicio</a><a href="descargas.html">Descargar</a></nav>
+  </div>
+</header>
+
+<main>
+  <div id="lista"><p class="gris">Cargando…</p></div>
+
+  <div class="pie">
+    <p><a href="index.html">Inicio</a> · <a href="descargas.html">Descargar</a></p>
+  </div>
+</main>
+
+<script>
+fetch("historial.json?" + Date.now())
+  .then(function (r) { return r.json(); })
+  .then(function (versiones) {
+    var html = "";
+    for (var i = 0; i < versiones.length; i++) {
+      var v = versiones[i];
+      html += '<div class="tarjeta' + (i === 0 ? ' destacado' : '') + '">';
+      html += "<h2 style='margin-top:0'>" + v.versionName +
+              " <span class='gris chico'>(compilación " + v.versionCode + ")</span></h2>";
+      html += "<p class='gris chico' style='margin:0'>" + v.fecha +
+              (v.pesoMb ? " · " + v.pesoMb + " MB" : "") + "</p>";
+      if (v.notas) { html += "<p>" + v.notas + "</p>"; }
+      html += lista("Qué trae de nuevo", v.cambios);
+      html += lista("Qué se arregló", v.correcciones);
+      if (v.url) {
+        html += "<p style='margin-top:16px'><a href='" + v.url + "' download>Descargar esta versión</a></p>";
+      } else {
+        html += "<p class='gris chico' style='margin-top:16px'>Esta versión no se publicó aquí.</p>";
+      }
+      html += "</div>";
+    }
+    document.getElementById("lista").innerHTML = html;
+  })
+  .catch(function () {
+    document.getElementById("lista").innerHTML =
+      "<p>No se pudo leer el historial. Recargue la página.</p>";
+  });
+
+function lista(titulo, renglones) {
+  if (!renglones || !renglones.length) { return ""; }
+  var html = "<h3>" + titulo + "</h3><ul>";
+  for (var i = 0; i < renglones.length; i++) {
+    html += "<li>" + renglones[i] + "</li>";
+  }
+  return html + "</ul>";
+}
+</script>
+</body>
+</html>
