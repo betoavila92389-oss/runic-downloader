@@ -1,22 +1,18 @@
 {
-  "versionCode": 6,
-  "versionName": "2.0.0",
-  "fecha": "3 de noviembre de 2026",
+  "versionCode": 7,
+  "versionName": "2.1.0",
+  "fecha": "7 de noviembre de 2026",
   "pesoMb": 109,
-  "url": "https://github.com/betoavila92389-oss/runic-downloader/releases/download/v2.0.0-6/RunicDownloader-v2.0.0.apk",
-  "notas": "Una versión nueva de Runic: ahora busca canciones y álbumes por su nombre, baja varias cosas a la vez y estrena reproductor de video. La música se escucha ahora con RunicMusic.",
+  "url": "https://github.com/betoavila92389-oss/runic-downloader/releases/download/v2.1.0-7/RunicDownloader-v2.1.0.apk",
+  "notas": "Arregla un cierre al terminar de bajar un video, y la pestaña Descargar queda lista para el enlace siguiente.",
   "cambios": [
-    "Busca por nombre, sin tener que pegar un enlace: canciones, álbumes completos y videos, con sugerencias mientras escribes.",
-    "Escucha una vista previa antes de bajar, para confirmar que es la correcta.",
-    "Baja varias cosas a la vez. La nueva pestaña Mis descargas enseña el avance, deja pausar y reintentar, y sigue donde se quedó aunque cierres la app.",
-    "Música en MP3, M4A, Opus o FLAC, con la carátula oficial en alta calidad y ordenada por artista y álbum.",
-    "Reproductor de video renovado: doble toque para adelantar, gestos de brillo y volumen, velocidad, bloqueo de pantalla, y sigue donde lo dejaste.",
-    "Comparte un enlace a Runic desde YouTube, TikTok o el navegador.",
-    "Colores nuevos y efecto vidrio con tu fondo de pantalla.",
-    "⚠ Ya no trae reproductor de música: para escucharla está RunicMusic, gratis, en betoavila92389-oss.github.io/runicmusic. Tus canciones no se tocan."
+    "La notificación dice por cuál va: «Canción 3 de 11».",
+    "El botón de descargar se queda apagado mientras baja, para no pedir lo mismo dos veces.",
+    "Al terminar un video, la pestaña Descargar se limpia sola: copias otro enlace, vuelves a Runic y ya está puesto.",
+    "Los álbumes bajan más rápido, sobre todo con la pantalla apagada.",
+    "Salen de Ajustes Organizar música, Limpiar nombres, Canciones repetidas y Reescanear carpetas: de eso se encarga RunicMusic."
   ],
   "correcciones": [
-    "Si YouTube bloquea o falla la red, Runic reintenta por su cuenta según lo que haya pasado, y solo se rinde cuando ya no hay nada que hacer.",
-    "Ya no vuelve a bajar lo que ya tienes, aunque se llame distinto o venga de otro programa."
+    "Runic podía cerrarse sola justo al terminar una descarga."
   ]
 }
