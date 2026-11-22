@@ -1,18 +1,16 @@
 {
-  "versionCode": 7,
-  "versionName": "2.1.0",
-  "fecha": "7 de noviembre de 2026",
+  "versionCode": 8,
+  "versionName": "2.1.1",
+  "fecha": "22 de noviembre de 2026",
   "pesoMb": 109,
-  "url": "https://github.com/betoavila92389-oss/runic-downloader/releases/download/v2.1.0-7/RunicDownloader-v2.1.0.apk",
-  "notas": "Arregla un cierre al terminar de bajar un video, y la pestaña Descargar queda lista para el enlace siguiente.",
+  "url": "https://github.com/betoavila92389-oss/runic-downloader/releases/download/v2.1.1-8/RunicDownloader-v2.1.1.apk",
+  "notas": "Arregla «Abrir carpeta», «Oír en RunicMusic» ya toca la canción, y cada canción se puede compartir.",
   "cambios": [
-    "La notificación dice por cuál va: «Canción 3 de 11».",
-    "El botón de descargar se queda apagado mientras baja, para no pedir lo mismo dos veces.",
-    "Al terminar un video, la pestaña Descargar se limpia sola: copias otro enlace, vuelves a Runic y ya está puesto.",
-    "Los álbumes bajan más rápido, sobre todo con la pantalla apagada.",
-    "Salen de Ajustes Organizar música, Limpiar nombres, Canciones repetidas y Reescanear carpetas: de eso se encarga RunicMusic."
+    "«Oír en RunicMusic» abre RunicMusic tocando esa canción, en vez de solo abrir la app.",
+    "Botón «Compartir» en cada canción de Mis descargas: WhatsApp, Quick Share, correo…",
+    "En un Samsung, «Abrir carpeta» abre Mis archivos justo en la carpeta de la canción."
   ],
   "correcciones": [
-    "Runic podía cerrarse sola justo al terminar una descarga."
+    "Runic se cerraba al tocar «Abrir carpeta» en Mis descargas."
   ]
 }
